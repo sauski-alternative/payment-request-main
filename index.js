@@ -62,6 +62,18 @@ function buildPaymentRequest() {
 
 let request = buildPaymentRequest();
 
+function handlePaymentResponse(response) {
+    response.complete('success')
+      .then(function() {
+        done('This is a demo website. No payment will be processed.', response);
+      })
+      .catch(function(err) {
+        status.textContent = err;
+        request = buildPaymentRequest();
+      });
+}
+
+
 function onBuyClicked() {
   if (!window.PaymentRequest || !request) {
     status.textContent ='PaymentRequest API is not supported.';
