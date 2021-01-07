@@ -72,11 +72,11 @@ function onBuyClicked() {
     request.show()
       .then(handlePaymentResponse)
       .catch(function(err) {
-        error(err);
+        status.textContent = err;
         request = buildPaymentRequest();
       });
   } catch (e) {
-    error('Developer mistake: \'' + e.message + '\'');
+    status.textContent = 'Developer mistake: \'' + e.message + '\'';
     request = buildPaymentRequest();
   }
 }
