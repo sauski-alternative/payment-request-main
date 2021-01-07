@@ -43,18 +43,18 @@ function buildPaymentRequest() {
       request.canMakePayment().then(function(result) {
         info(result ? 'Can make payment' : 'Cannot make payment');
       }).catch(function(err) {
-        error(err);
+        status.textContent = err;
       });
     }
     if (request.hasEnrolledInstrument) {
       request.hasEnrolledInstrument().then(function(result) {
         info(result ? 'Has enrolled instrument' : 'No enrolled instrument');
       }).catch(function(err) {
-        error(err);
+        status.textContent = err;
       });
     }
   } catch (e) {
-    error('Developer mistake: \'' + e.message + '\'');
+    status.textContent = 'Developer mistake: \'' + e.message + '\'';
   }
 
   return request;
