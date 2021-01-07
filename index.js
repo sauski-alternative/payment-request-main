@@ -8,7 +8,7 @@ function buildPaymentRequest() {
   // This needs to provide a manifest link HTTP header property, it does not
   // currently.
   const supportedInstruments = [{
-    supportedMethods: ['https://sauski.github.com/payment-request-driveby/']
+    supportedMethods: ['https://sauski.github.com/payment-request-driveby/manifest.json']
   }
   ];
 
